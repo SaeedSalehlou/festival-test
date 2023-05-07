@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Delete Movie(s)</h1>
+<div mat-dialog-content *ngIf="data;else elseCond">
+    Are You sure Delete <b> {{data.name}} - ({{data.directorName}})</b>?
+</div>
+<ng-template #elseCond>
+    <div mat-dialog-content>
+
+        Are You sure Delete All Movies?
+    </div>
+</ng-template>
+<div mat-dialog-actions>
+    <button mat-flat-button color="warn" (click)="onYesClick()">Yes</button>
+    <button mat-flat-button (click)="onNoClick()" cdkFocusInitial>No</button>
+</div>

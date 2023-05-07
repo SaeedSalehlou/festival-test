@@ -1,0 +1,66 @@
+<form [formGroup]="movieForm">
+    <div class="container text-center" style="width: 400px;">
+        <div class="row">
+
+            <div *ngIf="data.id;else elseCond">
+                <h1>
+                    Edit <b> {{data.name}} - ({{data.directorName}})</b>
+                </h1>
+            </div>
+            <ng-template #elseCond>
+                <h1>
+                    Create Movie
+                </h1>
+            </ng-template>
+        </div>
+        <!--        <div class="row">
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstname" type="text">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastname" type="text">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field>
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+                <mat-datepicker-toggle matIconSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field>
+                <mat-label>Phone Number</mat-label>
+                <input matInput formControlName="phoneNumber">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field>
+                <mat-label>email</mat-label>
+                <input matInput formControlName="email" type="email">
+                <mat-error *ngIf="movieForm.get('email')!.invalid">{{getEmailErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field>
+                <mat-label>bank Account Number</mat-label>
+                <input matInput formControlName="bankAccountNumber">
+            </mat-form-field>
+        </div>
+        <div mat-dialog-actions>
+            <button mat-flat-button color="primary" cdkFocusInitial [disabled]="!movieForm.valid"
+                (click)="onSaveClick()">Save</button>
+            <button mat-flat-button (click)="onNoClick()">Cancel</button>
+        </div>
+
+    </div>
+
+
+</form> -->

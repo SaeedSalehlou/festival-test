@@ -1,6 +1,6 @@
 import { MovieModel } from '../models/movie/movie.model';
 
-export const MOVIE_LIST: MovieModel[] = [
+export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
     {
         id: 1,
         name: 'Innocent Blood',
