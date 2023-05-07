@@ -48,9 +48,8 @@ export class MovieService {
     let responseModel: ResponseModel = { message: '', status: false };
     let mockData: MovieModel[] = this.get();
     let check = this.checkExist(updateModel);
-    debugger;
     if (!check) {
-      mockData[updateModel.id - 1] = updateModel;
+      mockData[updateModel.id - 1] = updateModel
       this.localStorageService.saveData(this.localStorageKey, JSON.stringify(mockData));
       responseModel.status = true;
       responseModel.message = 'Edit Movie Successful';
@@ -81,13 +80,13 @@ export class MovieService {
 
   //#region private method
   private checkExist(newData: MovieModel): boolean {
-    let data = this.get();
-    debugger;
-    return data.some(
+    let mockData = this.get();
+    return mockData.some(
       (oldData) => {
         return (
           oldData.name === newData.name &&
-          oldData.directorName === newData.directorName
+          oldData.directorName === newData.directorName &&
+          oldData.id != newData.id
         );
       }
     );

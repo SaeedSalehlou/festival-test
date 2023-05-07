@@ -1,4 +1,4 @@
 export enum TypesEnum {
-    "داخلی" = 0,
-    "خارجی" = 1
+    "Internal" = 0,
+    "Foreign"
 }

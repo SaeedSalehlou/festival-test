@@ -7,6 +7,7 @@ import { ListComponent } from './list/list.component';
 import { MaterialModule } from 'src/app/shared/ui-kits/material/material.module';
 import { DeleteComponent } from './delete/delete.component';
 import { EditComponent } from './edit/edit.component';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 
 @NgModule({
@@ -19,7 +20,10 @@ import { EditComponent } from './edit/edit.component';
   imports: [
     CommonModule,
     MovieRoutingModule,
-    MaterialModule
-  ]
+    MaterialModule,
+    NgxMaskDirective, NgxMaskPipe
+  ],
+  providers: [provideNgxMask()]
+
 })
 export class MovieModule { }

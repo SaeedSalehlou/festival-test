@@ -10,7 +10,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '05/11/1943',
         endDate: '06/24/1950',
         type: 0,
-        country: 'China',
+        country: '',
         score: 1,
     },
     {
@@ -34,7 +34,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '12/18/1979',
         endDate: '02/14/1921',
         type: 0,
-        country: 'Kazakhstan',
+        country: '',
         score: 20,
     },
     {
@@ -58,7 +58,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '09/17/2006',
         endDate: '03/12/1986',
         type: 0,
-        country: 'Cameroon',
+        country: '',
         score: 1,
     },
     {
@@ -82,7 +82,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '07/31/1924',
         endDate: '02/16/2004',
         type: 0,
-        country: 'Nicaragua',
+        country: '',
         score: 6,
     },
     {
@@ -94,7 +94,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '08/13/1950',
         endDate: '04/30/1929',
         type: 0,
-        country: 'Peru',
+        country: '',
         score: 7,
     },
     {
@@ -105,7 +105,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         gener: 2,
         startDate: '01/12/1969',
         endDate: '05/17/1904',
-        type: 0,
+        type: 1,
         country: 'China',
         score: 11,
     },
@@ -129,7 +129,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         gener: 1,
         startDate: '11/07/1942',
         endDate: '06/22/1986',
-        type: 0,
+        type: 1,
         country: 'Argentina',
         score: 7,
     },
@@ -142,7 +142,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '01/12/1991',
         endDate: '11/19/1977',
         type: 0,
-        country: 'Argentina',
+        country: '',
         score: 2,
     },
     {
@@ -166,7 +166,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '10/25/1985',
         endDate: '09/27/1975',
         type: 0,
-        country: 'Poland',
+        country: '',
         score: 10,
     },
     {
@@ -214,7 +214,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '11/16/2021',
         endDate: '08/28/1915',
         type: 0,
-        country: 'Peru',
+        country: '',
         score: 5,
     },
     {
@@ -226,7 +226,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '05/10/1955',
         endDate: '06/17/1915',
         type: 0,
-        country: 'Vietnam',
+        country: '',
         score: 9,
     },
     {
@@ -238,7 +238,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '04/01/1956',
         endDate: '12/21/1962',
         type: 0,
-        country: 'Brazil',
+        country: '',
         score: 5,
     },
     {
@@ -250,7 +250,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '09/15/1916',
         endDate: '11/27/1967',
         type: 0,
-        country: 'France',
+        country: '',
         score: 15,
     },
     {
@@ -285,7 +285,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         gener: 2,
         startDate: '08/01/1939',
         endDate: '11/22/1968',
-        type: 0,
+        type: 1,
         country: 'Czech Republic',
         score: 5,
     },
@@ -370,7 +370,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '05/10/2015',
         endDate: '04/01/2013',
         type: 0,
-        country: 'Nigeria',
+        country: '',
         score: 20,
     },
     {
@@ -382,7 +382,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '07/12/1938',
         endDate: '08/14/1932',
         type: 0,
-        country: 'Russia',
+        country: '',
         score: 7,
     },
     {
@@ -394,7 +394,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '03/14/1973',
         endDate: '01/18/2022',
         type: 0,
-        country: 'Brazil',
+        country: '',
         score: 20,
     },
     {
@@ -454,7 +454,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '11/01/1931',
         endDate: '03/28/1962',
         type: 0,
-        country: 'Philippines',
+        country: '',
         score: 19,
     },
     {
@@ -466,7 +466,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '03/27/1951',
         endDate: '08/14/2012',
         type: 0,
-        country: 'Indonesia',
+        country: '',
         score: 17,
     },
     {
@@ -478,7 +478,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '01/24/1994',
         endDate: '06/30/1989',
         type: 0,
-        country: 'China',
+        country: '',
         score: 13,
     },
     {
@@ -490,7 +490,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '04/02/1952',
         endDate: '03/11/1997',
         type: 0,
-        country: 'Indonesia',
+        country: '',
         score: 15,
     },
     {
@@ -538,7 +538,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '06/17/1999',
         endDate: '09/13/1903',
         type: 0,
-        country: 'Argentina',
+        country: '',
         score: 19,
     },
     {
@@ -550,7 +550,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '07/16/2007',
         endDate: '02/24/2019',
         type: 0,
-        country: 'China',
+        country: '',
         score: 12,
     },
     {
@@ -562,7 +562,7 @@ export const MOVIE_LIST_MOCKDATA: MovieModel[] = [
         startDate: '01/12/1960',
         endDate: '12/05/1902',
         type: 0,
-        country: 'China',
+        country: '',
         score: 16,
     },
     {

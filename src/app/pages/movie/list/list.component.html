@@ -9,82 +9,81 @@
     <mat-label>Search</mat-label>
     <input #searchTerm matInput placeholder="search by Movie Name or Director Name" (keyup)="search(searchTerm.value)">
 </mat-form-field>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <!-- name Column -->
-    <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
+<section class="myProject-container">
 
-    <!-- startDate Column -->
-    <ng-container matColumnDef="startDate">
-        <th mat-header-cell *matHeaderCellDef> startDate </th>
-        <td mat-cell *matCellDef="let element"> {{element.startDate}} </td>
-    </ng-container>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
 
-    <!-- endDate Column -->
-    <ng-container matColumnDef="endDate">
-        <th mat-header-cell *matHeaderCellDef> endDate </th>
-        <td mat-cell *matCellDef="let element"> {{element.endDate}} </td>
-    </ng-container>
+        <!-- startDate Column -->
+        <ng-container matColumnDef="startDate">
+            <th mat-header-cell *matHeaderCellDef> startDate </th>
+            <td mat-cell *matCellDef="let element"> {{element.startDate}} </td>
+        </ng-container>
 
-    <!-- gender Column -->
-    <ng-container matColumnDef="gender">
-        <th mat-header-cell *matHeaderCellDef> gender </th>
-        <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
-    </ng-container>
+        <!-- endDate Column -->
+        <ng-container matColumnDef="endDate">
+            <th mat-header-cell *matHeaderCellDef> endDate </th>
+            <td mat-cell *matCellDef="let element"> {{element.endDate}} </td>
+        </ng-container>
 
-    <!-- type Column -->
-    <ng-container matColumnDef="type">
-        <th mat-header-cell *matHeaderCellDef> type </th>
-        <td mat-cell *matCellDef="let element"> {{element.type}} </td>
-    </ng-container>
+        <!-- type Column -->
+        <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef> type </th>
+            <td mat-cell *matCellDef="let element"> {{typeEnumList[element.type]}} </td>
+        </ng-container>
 
-    <!-- country Column -->
-    <ng-container matColumnDef="country">
-        <th mat-header-cell *matHeaderCellDef> country </th>
-        <td mat-cell *matCellDef="let element"> {{element.country}} </td>
-    </ng-container>
+        <!-- country Column -->
+        <ng-container matColumnDef="country">
+            <th mat-header-cell *matHeaderCellDef> country </th>
+            <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+        </ng-container>
 
-    <!-- gener Column -->
-    <ng-container matColumnDef="gener">
-        <th mat-header-cell *matHeaderCellDef> gener </th>
-        <td mat-cell *matCellDef="let element"> {{element.gener}} </td>
-    </ng-container>
+        <!-- gener Column -->
+        <ng-container matColumnDef="gener">
+            <th mat-header-cell *matHeaderCellDef> gener </th>
+            <td mat-cell *matCellDef="let element"> {{generEnumList[element.gener]}} </td>
+        </ng-container>
 
-    <!-- eyeColor Column -->
-    <ng-container matColumnDef="score">
-        <th mat-header-cell *matHeaderCellDef> score </th>
-        <td mat-cell *matCellDef="let element"> {{element.score}} </td>
-    </ng-container>
+        <!-- eyeColor Column -->
+        <ng-container matColumnDef="score">
+            <th mat-header-cell *matHeaderCellDef> score </th>
+            <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
 
-    <!-- directorName Column -->
-    <ng-container matColumnDef="directorName">
-        <th mat-header-cell *matHeaderCellDef> directorName </th>
-        <td mat-cell *matCellDef="let element"> {{element.directorName}} </td>
-    </ng-container>
+        <!-- directorName Column -->
+        <ng-container matColumnDef="directorName">
+            <th mat-header-cell *matHeaderCellDef> directorName </th>
+            <td mat-cell *matCellDef="let element"> {{element.directorName}} </td>
+        </ng-container>
 
-    <!-- directorEmail Column -->
-    <ng-container matColumnDef="directorEmail">
-        <th mat-header-cell *matHeaderCellDef> directorEmail </th>
-        <td mat-cell *matCellDef="let row">
-            <div *ngIf="currentRow!=row.id">
-                {{row.directorEmail}}
-            </div>
-            <div *ngIf="currentRow==row.id">
-                <button mat-icon-button color="primary" (click)="edit(row)"
-                    aria-label="Example icon button with a home icon">
-                    <mat-icon>edit</mat-icon>
-                </button>
-                <button mat-icon-button color="warn" (click)="delete(row)"
-                    aria-label="Example icon button with a home icon">
-                    <mat-icon>delete</mat-icon>
-                </button>
-            </div>
-        </td>
-    </ng-container>
+        <!-- directorEmail Column -->
+        <ng-container matColumnDef="directorEmail">
+            <th mat-header-cell *matHeaderCellDef> directorEmail </th>
+            <td mat-cell *matCellDef="let row">
+                <div *ngIf="currentRow!=row.id">
+                    {{row.directorEmail}}
+                </div>
+                <div *ngIf="currentRow==row.id">
+                    <button mat-icon-button color="primary" (click)="edit(row)"
+                        aria-label="Example icon button with a home icon">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="delete(row)"
+                        aria-label="Example icon button with a home icon">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </td>
+        </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (mouseenter)="currentRow=row.id"
-        (mouseleave)="currentRow=-1" (dblclick)="edit(row)"></tr>
-</table>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (mouseenter)="currentRow=row.id"
+            [ngClass]="{'make-green': row.score >= 18,'make-red': row.score < 10}" (mouseleave)="currentRow=-1"
+            (dblclick)="edit(row)">
+        </tr>
+    </table>
+</section>

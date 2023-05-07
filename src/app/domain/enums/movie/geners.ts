@@ -1,7 +1,14 @@
+
 export enum GenersEnum {
-    "کمدی ",
-    "اکشن ",
-    "رئال ",
-    "رمانتیک",
-    "سایر",
+    "Comedy",
+    "Drama",
+    "Horror",
+    "Action",
+    "Suspense",
+    "Detective",
+    "thriller",
+    "Fantasy",
+    "Adventure",
+    "Musical",
+    "Other"
 }

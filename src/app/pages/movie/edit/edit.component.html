@@ -1,60 +1,85 @@
 <form [formGroup]="movieForm">
-    <div class="container text-center" style="width: 400px;">
+    <div style="width: 500px;">
         <div class="row">
 
             <div *ngIf="data.id;else elseCond">
-                <h1>
-                    Edit <b> {{data.name}} - ({{data.directorName}})</b>
-                </h1>
+                <h2> Edit <b> {{data.name}} - ({{data.directorName}})</b> </h2>
             </div>
             <ng-template #elseCond>
-                <h1>
-                    Create Movie
-                </h1>
+                <h2> Create Movie </h2>
             </ng-template>
         </div>
-        <!--        <div class="row">
+
+        <div class="row">
             <mat-form-field>
-                <mat-label>First Name</mat-label>
-                <input matInput formControlName="firstname" type="text">
+                <mat-label>Movie Name</mat-label>
+                <input matInput formControlName="name" type="text" required>
+                <mat-error *ngIf="movieForm.get('name')!.invalid">{{getMovieNameErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field>
-                <mat-label>Last Name</mat-label>
-                <input matInput formControlName="lastname" type="text">
+                <mat-label>director Name</mat-label>
+                <input matInput formControlName="directorName" type="text" required>
+                <mat-error *ngIf="movieForm.get('directorName')!.invalid">{{getdirectorNameErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+
+            <mat-form-field>
+                <mat-label>type</mat-label>
+                <mat-select formControlName="type" required>
+                    <mat-option *ngFor="let type of typesList | keyvalue" [value]="type.value">
+                        {{type.key}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field *ngIf="movieForm.get('type')!.value!=0">
+                <mat-label>country</mat-label>
+                <input matInput formControlName="country" type="text" [disabled]="movieForm.get('type')!.value!=0">
+            </mat-form-field>
+        </div>
+        <div class="row">
+
+            <mat-form-field>
+                <mat-label>gener</mat-label>
+                <mat-select formControlName="gener" required>
+                    <mat-option *ngFor="let gener of genersList | keyvalue" [value]="gener.value">
+                        {{gener.key}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field>
-                <mat-label>Choose a date</mat-label>
-                <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
-                <mat-datepicker-toggle matIconSuffix [for]="picker">
-                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-                </mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+                <mat-label>score</mat-label>
+                <input matInput formControlName="score" type="number" min="0" max="20" required>
+                <mat-error *ngIf="movieForm.get('score')!.invalid">{{getScoreErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field>
-                <mat-label>Phone Number</mat-label>
-                <input matInput formControlName="phoneNumber">
+                <mat-label>start Date</mat-label>
+                <input matInput formControlName="startDate" type="text" mask="d0/M0/0000">
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field>
-                <mat-label>email</mat-label>
-                <input matInput formControlName="email" type="email">
-                <mat-error *ngIf="movieForm.get('email')!.invalid">{{getEmailErrorMessage()}}</mat-error>
+                <mat-label>end Date</mat-label>
+                <input matInput formControlName="endDate" type="text" mask="d0/M0/0000">
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field>
-                <mat-label>bank Account Number</mat-label>
-                <input matInput formControlName="bankAccountNumber">
+                <mat-label>director Email</mat-label>
+                <input matInput formControlName="directorEmail" type="text">
             </mat-form-field>
+            <mat-error *ngIf="movieForm.get('directorEmail')!.invalid">{{getEmailErrorMessage()}}</mat-error>
         </div>
-        <div mat-dialog-actions>
+
+        <div mat-dialog-actions style="margin-top: 20px;">
             <button mat-flat-button color="primary" cdkFocusInitial [disabled]="!movieForm.valid"
                 (click)="onSaveClick()">Save</button>
             <button mat-flat-button (click)="onNoClick()">Cancel</button>
@@ -63,4 +88,4 @@
     </div>
 
 
-</form> -->
+</form>

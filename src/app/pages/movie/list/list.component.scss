@@ -2,7 +2,21 @@ table {
     width: 100%;
 }
 
+.myProject-container {
+
+    height: calc(100vh - 150px);
+    overflow: auto;
+}
+
 .myProject-full-width {
     margin-left: 10px;
     width: 50%;
+}
+
+.make-green {
+    background-color: rgb(165, 255, 177)
+}
+
+.make-red {
+    background-color: rgb(255, 104, 121)
 }

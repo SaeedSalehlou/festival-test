@@ -6,6 +6,9 @@ import { MovieModel } from 'src/app/domain/models/movie/movie.model';
 import { ResponseModel } from 'src/app/domain/models/response.model';
 import { DeleteComponent } from '../delete/delete.component';
 import { EditComponent } from '../edit/edit.component';
+import { GenersEnum } from 'src/app/domain/enums/movie/geners';
+import { TypesEnum } from 'src/app/domain/enums/movie/types';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-list',
@@ -14,7 +17,8 @@ import { EditComponent } from '../edit/edit.component';
 })
 export class ListComponent {
   currentRow = 0;
-
+  generEnumList = GenersEnum;
+  typeEnumList = TypesEnum;
   displayedColumns: string[] =
     [
       'name',
@@ -32,7 +36,8 @@ export class ListComponent {
 
   constructor(
     private movieService: MovieService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private snackBar: MatSnackBar,
   ) { }
 
 
@@ -93,7 +98,7 @@ export class ListComponent {
 
             }
             else
-              alert(response.message)
+              this.openSnackBar(response);
           }
         }
       );
@@ -115,7 +120,7 @@ export class ListComponent {
 
             }
             else
-              alert(response.message)
+              this.openSnackBar(response)
           }
         }
       );
@@ -136,7 +141,12 @@ export class ListComponent {
               this.loadData();
             }
             else {
-              alert('The Customer was n\'t Delete.');
+              let res: ResponseModel = {
+                message: 'The Customer was n\'t Delete.',
+                status: false
+
+              };
+              this.openSnackBar(res);
 
             }
           }
@@ -158,7 +168,12 @@ export class ListComponent {
               this.loadData();
             }
             else {
-              alert('The Customer was n\'t Delete.');
+              let res: ResponseModel = {
+                message: 'The Customer was n\'t Delete.',
+                status: false
+
+              };
+              this.openSnackBar(res);
             }
           }
         }
@@ -167,6 +182,13 @@ export class ListComponent {
   }
   //#endregion Actions
 
+  private openSnackBar(response: ResponseModel) {
+    this.snackBar.open(response.message, 'Close!', {
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+      duration: 3000
+    });
+  }
 
 }
 
