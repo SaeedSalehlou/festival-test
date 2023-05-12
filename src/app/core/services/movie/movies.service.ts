@@ -25,11 +25,7 @@ export class MovieService {
     const id: number = mockData.length + 1;
 
     if (!this.checkExist(newModel)) {
-      mockData.push(
-        {
-          ...newModel, id
-        }
-      );
+      mockData.push({ ...newModel, id });
       this.localStorageService.saveData(this.localStorageKey, JSON.stringify(mockData));
       responseModel.status = true;
       responseModel.message = 'Create Movie Successful';
@@ -39,9 +35,6 @@ export class MovieService {
       responseModel.message = 'The operation failed';
     }
     return responseModel;
-
-
-
   }
 
   update(updateModel: MovieModel): ResponseModel {
